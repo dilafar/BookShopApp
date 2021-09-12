@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AppBookshop</string>
+    <string name="title" />
+    <string name="category">Category</string>
+    <string name="product_name">Product Name</string>
+    <string name="discription">Discription</string>
+    <string name="Available_Qty">Available Qty</string>
+    <string name="price">Price</string>
+    <string name="offer">Offer</string>
+    <string name="submit">Submit</string>
+    <string name="view">View</string>
+    <string name="img_pd">Add Product Image</string>
+</resources>
