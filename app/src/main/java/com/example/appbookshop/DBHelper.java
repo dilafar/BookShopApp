@@ -95,7 +95,7 @@ public class DBHelper extends SQLiteOpenHelper {
         if(cursor != null){
 
 
-                cursor.moveToFirst();
+            cursor.moveToFirst();
 
 
 
