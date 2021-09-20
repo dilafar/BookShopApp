@@ -17,9 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppBookshop">
-        <activity
-            android:name=".CategoryView2"
-            android:exported="true" />
+        
         <activity
             android:name=".UpdateAccountActivity"
             android:exported="true" />
