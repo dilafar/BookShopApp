@@ -43,6 +43,9 @@ public class AddProducts2 extends AppCompatActivity {
         setContentView(binding.getRoot());
         DBHelper3 dbHelper3 = new DBHelper3(this);
 
+        String cname2=getIntent().getStringExtra("cname2");
+        binding.productname40.setText(cname2);
+
         binding.addbutton40.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

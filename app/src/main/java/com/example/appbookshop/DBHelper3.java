@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class DBHelper3 extends SQLiteOpenHelper {
     final static String DBNAME = "mydatabase5.db";
     final static int DBVERSION = 2;
+    public static final String TABLE_NAME = "items";
 
     public DBHelper3(@Nullable Context context) {
         super(context, DBNAME, null, DBVERSION);
@@ -108,6 +109,31 @@ public class DBHelper3 extends SQLiteOpenHelper {
         }
         cursor.close();
         database.close();
+        return mainModels;
+    }
+
+    ArrayList<MainModel> getData(String category){
+        ArrayList<MainModel> mainModels = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        String sql="select * from " + TABLE_NAME + " where category =?";
+        String[] select={category};
+        Cursor cursor=db.rawQuery(sql,select);
+        if(cursor.moveToFirst()){
+            while (cursor.moveToNext()){
+                MainModel model = new MainModel();
+                model.setItemID(cursor.getInt(0)+"");
+                model.setPimage(cursor.getInt(1));
+                model.setCategory(cursor.getString(2));
+                model.setPname(cursor.getString(3));
+                model.setPdiscription(cursor.getString(4));
+                model.setPavqty(cursor.getInt(5)+"");
+                model.setPrice(cursor.getInt(6)+"");
+                model.setOffer(cursor.getInt(7)+"");
+                mainModels.add(model);
+            }
+        }
+        cursor.close();
+        db.close();
         return mainModels;
     }
 
