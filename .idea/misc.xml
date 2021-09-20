@@ -3,13 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/drawable/ic_baseline_date_range_24.xml" value="0.2703125" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_add_category.xml" value="0.12360688956433637" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_category.xml" value="0.12360688956433637" />
         <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_category_view.xml" value="0.17889492753623187" />
         <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_dashboard1.xml" value="0.2" />
         <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_dashboard2.xml" value="0.264" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_delivery.xml" value="0.1453804347826087" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_delivery_status_view.xml" value="0.1453804347826087" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_payment.xml" value="0.12360688956433637" />
         <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_update_account.xml" value="0.17255434782608695" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_update_delivery_status.xml" value="0.12360688956433637" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_update_order_details.xml" value="0.12360688956433637" />
         <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_user_login.xml" value="0.17889492753623187" />
         <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_user_register.xml" value="0.17889492753623187" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_view_payment_history.xml" value="0.13043478260869565" />
         <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/activity_viewuser_account.xml" value="0.2" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/adminproductlayout.xml" value="0.12360688956433637" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/categorylayout.xml" value="0.1453804347826087" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/categoryviewlayout.xml" value="0.1453804347826087" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/delivery_status_view_layout.xml" value="0.1453804347826087" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/layout2.xml" value="0.12360688956433637" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/order_sample.xml" value="0.1453804347826087" />
+        <entry key="..\:/AfdhalApp/BookShopApp/app/src/main/res/layout/view_payment_history_layout.xml" value="0.12360688956433637" />
         <entry key="..\:/AndroidStudioProjects/AppBookshop/app/src/main/res/layout/activity_add_product.xml" value="0.16802536231884058" />
         <entry key="..\:/AndroidStudioProjects/AppBookshop/app/src/main/res/layout/activity_add_products.xml" value="0.11955420466058764" />
         <entry key="..\:/AndroidStudioProjects/AppBookshop/app/src/main/res/layout/activity_add_products2.xml" value="0.11955420466058764" />

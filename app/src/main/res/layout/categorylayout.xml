@@ -21,7 +21,7 @@
         android:textSize="18sp" />
 
     <ImageView
-        android:id="@+id/updateicon2"
+        android:id="@+id/dupdate27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="270dp"
@@ -31,7 +31,7 @@
         tools:ignore="VectorDrawableCompat" />
 
     <ImageView
-        android:id="@+id/deleteicon2"
+        android:id="@+id/ddelete27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="295dp"

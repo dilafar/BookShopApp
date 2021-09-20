@@ -74,8 +74,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.viewHo
         public viewHolder(@NonNull View itemView) {
             super(itemView);
             categoryname=itemView.findViewById(R.id.categoryname20);
-            update=itemView.findViewById(R.id.updateicon2);
-            remove=itemView.findViewById(R.id.deleteicon2);
+            update=itemView.findViewById(R.id.dupdate27);
+            remove=itemView.findViewById(R.id.ddelete27);
         }
     }
 }

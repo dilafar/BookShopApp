@@ -18,6 +18,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppBookshop">
         <activity
+            android:name=".UpdateDeliveryStatus"
+            android:exported="true" />
+        <activity
+            android:name=".ViewPaymentHistoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DeliveryStatusView"
+            android:exported="true" />
+        <activity
+            android:name=".DeliveryActivity"
+            android:exported="true" />
+        <activity
             android:name=".UpdateAccountActivity"
             android:exported="true" />
         <activity
