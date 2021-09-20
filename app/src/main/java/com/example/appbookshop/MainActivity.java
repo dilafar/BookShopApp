@@ -49,7 +49,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         DBHelper3 dbHelper= new DBHelper3(this);
-        ArrayList<MainModel> list = dbHelper.getItems();
+
+        String cname=getIntent().getStringExtra("cname");
+
+
+        ArrayList<MainModel> list = dbHelper.getData(cname);
 
 
         MainAdapter adapter = new MainAdapter(list,this);

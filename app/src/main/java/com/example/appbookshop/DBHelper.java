@@ -87,6 +87,32 @@ public class DBHelper extends SQLiteOpenHelper {
         return orders;
     }
 
+
+    public float gettotal(){
+
+        float total = 0;
+        SQLiteDatabase database = this.getWritableDatabase();
+        Cursor cursor = database.rawQuery("Select * from orders",null);
+        if(cursor.moveToNext()){
+            while(cursor.moveToNext()){
+
+
+
+               ;
+
+                total = total + ((cursor.getInt(3) * cursor.getInt(4)) + ((cursor.getInt(3) * cursor.getInt(4))*( (cursor.getInt(5))/100)));
+
+
+
+
+
+            }
+        }
+        cursor.close();
+        database.close();
+        return total;
+    }
+
     public Cursor getOrderById(int id){
 
 
@@ -113,6 +139,10 @@ public class DBHelper extends SQLiteOpenHelper {
     public int deleteOrder(String id){
         SQLiteDatabase database = this.getWritableDatabase();
         return database.delete("orders","id="+id,null);
+    }
+    public int deleteallOrder(){
+        SQLiteDatabase database = this.getWritableDatabase();
+        return database.delete("orders",null,null);
     }
 
 

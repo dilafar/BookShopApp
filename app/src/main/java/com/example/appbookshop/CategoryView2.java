@@ -11,39 +11,33 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.appbookshop.Adapter.OrdersAdapter;
-import com.example.appbookshop.Model.OrdersModel;
-import com.example.appbookshop.databinding.ActivityOrdersBinding;
-
+import com.example.appbookshop.Adapter.CategoryviewAdapter2;
+import com.example.appbookshop.Model.CategoryModel;
+import com.example.appbookshop.databinding.ActivityCategoryView2Binding;
 
 import java.util.ArrayList;
 
-public class OrdersActivity extends AppCompatActivity {
-   ActivityOrdersBinding binding;
-
-
+public class CategoryView2 extends AppCompatActivity {
+    ActivityCategoryView2Binding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityOrdersBinding.inflate(getLayoutInflater());
-
+        binding=ActivityCategoryView2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        DBHelper4 dbHelper4 =new DBHelper4(this);
+        ArrayList<CategoryModel> list =dbHelper4.getcategory();
+
+        CategoryviewAdapter2 adapter2 = new CategoryviewAdapter2(list,this);
+        binding.recyclerView25.setAdapter(adapter2);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        binding.recyclerView25.setLayoutManager(layoutManager);
+
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
-
-
-        DBHelper helper = new DBHelper(this);
-        ArrayList<OrdersModel> list = helper.getOrders();
-
-        float total = helper.gettotal();
-        binding.total500.setText(String.format("%.2f",total));
-
-        OrdersAdapter adapter = new OrdersAdapter(list,this);
-        binding.orderrecycleview.setAdapter(adapter);
-
-        LinearLayoutManager layoutManager=new LinearLayoutManager(this);
-        binding.orderrecycleview.setLayoutManager(layoutManager);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
