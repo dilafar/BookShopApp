@@ -1,9 +1,14 @@
 package com.example.appbookshop;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -42,6 +47,8 @@ public class UpdateAccountActivity extends AppCompatActivity {
                 );
                if(isupdated){
                    Toast.makeText(UpdateAccountActivity.this, "Updated", Toast.LENGTH_SHORT).show();
+                   Intent intent = new Intent(UpdateAccountActivity.this,UserLoginActivity.class);
+                   startActivity(intent);
                }else{
                    Toast.makeText(UpdateAccountActivity.this, "Fail", Toast.LENGTH_SHORT).show();
                }
@@ -53,8 +60,38 @@ public class UpdateAccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(UpdateAccountActivity.this,Dashboard2.class);
+                intent.putExtra("name",name);
                 startActivity(intent);
             }
         });
+
+        Toolbar toolbar = findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setTitle("Update Account  ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.example_menu2, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.Logout:
+                Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UpdateAccountActivity.this,UserLoginActivity.class);
+                startActivity(intent);
+                break;
+
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

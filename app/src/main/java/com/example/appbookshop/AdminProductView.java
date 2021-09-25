@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.appbookshop.Adapter.MainAdapter2;
@@ -38,15 +39,26 @@ public class AdminProductView extends AppCompatActivity {
         LinearLayoutManager layoutManager =new LinearLayoutManager(this);
         binding.recyclerView2.setLayoutManager(layoutManager);
 
+        binding.addFloat100.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AdminProductView.this,CategoryView.class);
+                startActivity(intent);
+            }
+        });
 
 
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setTitle("All Product  ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.example_menu, menu);
+        inflater.inflate(R.menu.example_menu2, menu);
         return true;
     }
 
@@ -55,11 +67,11 @@ public class AdminProductView extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.Logout:
                 Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(AdminProductView.this,UserLoginActivity.class);
+                startActivity(intent);
                 break;
 
-            case R.id.orders:
-                startActivity(new Intent(AdminProductView.this,OrdersActivity.class));
-                break;
+
         }
         return super.onOptionsItemSelected(item);
     }

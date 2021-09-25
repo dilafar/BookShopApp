@@ -9,16 +9,18 @@
 
     <TextView
         android:id="@+id/categoryname15"
-        android:layout_width="186dp"
+        android:layout_width="280dp"
         android:layout_height="54dp"
-        android:layout_marginStart="116dp"
+        android:layout_marginStart="60dp"
 
-        android:layout_marginLeft="116dp"
-        android:paddingLeft="40dp"
+        android:layout_marginLeft="60dp"
+        android:background="@color/teal_200"
+        android:paddingLeft="110dp"
         android:paddingTop="20dp"
         android:text="Canada"
         android:textColor="#000"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
 
 </RelativeLayout>

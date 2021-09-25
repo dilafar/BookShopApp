@@ -72,7 +72,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder>{
         RelativeLayout parentlayout;
         public viewholder(@NonNull View itemView) {
             super(itemView);
-            image=itemView.findViewById(R.id.image2);
+            image=itemView.findViewById(R.id.image22);
             productName=itemView.findViewById(R.id.categoryname20);
             discription=itemView.findViewById(R.id.image_name2);
             AvQty=itemView.findViewById(R.id.image_name4);

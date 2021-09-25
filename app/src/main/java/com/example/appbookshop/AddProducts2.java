@@ -20,6 +20,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+
 import com.example.appbookshop.databinding.ActivityAddProducts2Binding;
 
 import java.io.ByteArrayOutputStream;
@@ -44,7 +45,8 @@ public class AddProducts2 extends AppCompatActivity {
         DBHelper3 dbHelper3 = new DBHelper3(this);
 
         String cname2=getIntent().getStringExtra("cname2");
-        binding.productname40.setText(cname2);
+        binding.category40.setText(cname2);
+
 
         binding.addbutton40.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +81,10 @@ public class AddProducts2 extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
+        getSupportActionBar().setTitle("Add Product  ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         Button btn = findViewById(R.id.button40);
 
@@ -110,7 +116,7 @@ public class AddProducts2 extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.example_menu, menu);
+        inflater.inflate(R.menu.example_menu2, menu);
         return true;
     }
 
@@ -119,6 +125,8 @@ public class AddProducts2 extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.Logout:
                 Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(AddProducts2.this,UserLoginActivity.class);
+                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);

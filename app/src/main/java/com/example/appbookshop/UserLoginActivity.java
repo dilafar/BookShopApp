@@ -2,6 +2,8 @@ package com.example.appbookshop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -51,5 +53,29 @@ public class UserLoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        new AlertDialog.Builder(UserLoginActivity.this)
+                .setTitle("Exit")
+                .setIcon(R.drawable.ic_warning_24)
+                .setMessage("Are you sure you want to exit ? ")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                }).setNeutralButton("Help", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(UserLoginActivity.this,"If you press YES the app will be exited",Toast.LENGTH_SHORT).show();
+            }
+        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        }).show();
     }
 }

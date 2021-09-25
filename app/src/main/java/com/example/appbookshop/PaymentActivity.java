@@ -5,6 +5,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
@@ -27,6 +28,7 @@ public class PaymentActivity extends AppCompatActivity {
         binding=ActivityPaymentBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
         DBHelper8 dbHelper8 = new DBHelper8(this);
         final String uname = getIntent().getStringExtra("lname");
         final String pay = getIntent().getStringExtra("pay");
@@ -48,6 +50,7 @@ public class PaymentActivity extends AppCompatActivity {
 
                 if(isinserted){
                             Toast.makeText(PaymentActivity.this,"Success",Toast.LENGTH_SHORT).show();
+
                 }else{
                             Toast.makeText(PaymentActivity.this,"Error",Toast.LENGTH_SHORT).show();
                 }
@@ -57,12 +60,16 @@ public class PaymentActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setTitle("Payment  ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.example_menu, menu);
+        inflater.inflate(R.menu.example_menu2, menu);
         return true;
     }
 
@@ -71,6 +78,8 @@ public class PaymentActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.Logout:
                 Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(PaymentActivity.this,UserLoginActivity.class);
+                startActivity(intent);
                 break;
 
 

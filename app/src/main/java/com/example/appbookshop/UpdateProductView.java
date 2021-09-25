@@ -50,6 +50,8 @@ public class UpdateProductView extends AppCompatActivity {
                 );
                 if(isupdated){
                     Toast.makeText(UpdateProductView.this,"Updated",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(UpdateProductView.this,AdminProductView.class);
+                    startActivity(intent);
                 }else{
                     Toast.makeText(UpdateProductView.this,"Error",Toast.LENGTH_SHORT).show();
 
@@ -70,13 +72,17 @@ public class UpdateProductView extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setTitle("Update Product  ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.example_menu, menu);
+        inflater.inflate(R.menu.example_menu2, menu);
         return true;
     }
 
@@ -85,6 +91,8 @@ public class UpdateProductView extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.Logout:
                 Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UpdateProductView.this,UserLoginActivity.class);
+                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);

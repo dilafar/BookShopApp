@@ -1,6 +1,8 @@
 package com.example.appbookshop.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -60,12 +62,29 @@ public class MainAdapter2  extends  RecyclerView.Adapter<MainAdapter2.viewholder
             @Override
             public void onClick(View view) {
                 DBHelper3 dbHelper3 = new DBHelper3(context);
-                if(dbHelper3.deleteItem(model.getItemID())>0){
-                    Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
 
-                }
+                new AlertDialog.Builder(context)
+                        .setTitle("Delete")
+                        .setIcon(R.drawable.ic_warning_24)
+                        .setMessage("Are you sure you want to delete ? ")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                if(dbHelper3.deleteItem(model.getItemID())>0){
+                                    Toast.makeText(context, "Deleted", Toast.LENGTH_SHORT).show();
+                                }else{
+                                    Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
+
+                                }
+                            }
+                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                }).show();
+
+
             }
         });
 

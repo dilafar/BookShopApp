@@ -1,10 +1,17 @@
 package com.example.appbookshop;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -50,15 +57,56 @@ public class ViewuserAccountActivity extends AppCompatActivity {
         binding.delete60.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(dbHelper6.deleteuser(String.format("%d",id))>0){
-                    Toast.makeText(ViewuserAccountActivity.this, "deleted", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(ViewuserAccountActivity.this,UserLoginActivity.class);
-                    startActivity(intent);
-                }else{
-                    Toast.makeText(ViewuserAccountActivity.this,"Error",Toast.LENGTH_SHORT).show();
-                }
+
+                new AlertDialog.Builder(ViewuserAccountActivity.this)
+                        .setTitle("Delete")
+                        .setIcon(R.drawable.ic_warning_24)
+                        .setMessage("Are you sure you want to delete ? ")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                if(dbHelper6.deleteuser(String.format("%d",id))>0){
+                                    Toast.makeText(ViewuserAccountActivity.this, "deleted", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(ViewuserAccountActivity.this,UserLoginActivity.class);
+                                    startActivity(intent);
+                                }else{
+                                    Toast.makeText(ViewuserAccountActivity.this,"Error",Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
+                    }
+                }).show();
+
             }
         });
 
+        Toolbar toolbar = findViewById(R.id.toolbar1);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setTitle("User Account  ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.example_menu2, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.Logout:
+                Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ViewuserAccountActivity.this,UserLoginActivity.class);
+                startActivity(intent);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

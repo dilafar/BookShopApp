@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".AddProducts2">
 
     <include
@@ -235,6 +236,6 @@
         app:layout_constraintHorizontal_bias="0.252"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar1"
-        tools:srcCompat="@drawable/ic_launcher_background" />
+        app:srcCompat="@drawable/addimage"  />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

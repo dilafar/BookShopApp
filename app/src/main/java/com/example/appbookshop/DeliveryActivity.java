@@ -28,6 +28,9 @@ public class DeliveryActivity extends AppCompatActivity {
 
         DBHelper7 dbHelper7 = new DBHelper7(this);
 
+         String pay = getIntent().getStringExtra("pay");
+         binding.totalpay10.setText(pay);
+
         binding.pay500.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,12 +58,16 @@ public class DeliveryActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setTitle("Delivery  ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.example_menu, menu);
+        inflater.inflate(R.menu.example_menu2, menu);
         return true;
     }
 
@@ -69,6 +76,8 @@ public class DeliveryActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.Logout:
                 Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(DeliveryActivity.this,UserLoginActivity.class);
+                startActivity(intent);
                 break;
 
 

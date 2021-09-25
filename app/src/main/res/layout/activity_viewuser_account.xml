@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".ViewuserAccountActivity">
 
     <Button
         android:id="@+id/delete60"
         android:layout_width="135dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:background="@color/btn"
         android:text="Delete"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,21 +30,21 @@
         android:layout_height="36dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="TextView"
         android:textColor="#020202"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toEndOf="@+id/textView20"
         app:layout_constraintTop_toBottomOf="@+id/email60" />
 
     <TextView
         android:id="@+id/email60"
-        android:layout_width="157dp"
-        android:layout_height="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="20dp"
@@ -118,30 +120,35 @@
         app:title="@string/title" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView132"
         android:layout_width="177dp"
         android:layout_height="179dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="44dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar1"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:srcCompat="@drawable/ronaldo"  />
 
     <Button
         android:id="@+id/button"
         android:layout_width="150dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:background="@color/btn"
         android:text="select Image"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView132" />
 
     <TextView
         android:id="@+id/textView9"
@@ -176,10 +183,11 @@
     <Button
         android:id="@+id/edit60"
         android:layout_width="135dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="36dp"
+        android:background="@color/btn"
         android:text="Edit"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"

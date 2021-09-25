@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.Menu;
@@ -47,6 +48,8 @@ public class UpdateOrderDetails extends AppCompatActivity {
                         );
                 if(isupdated){
                     Toast.makeText(UpdateOrderDetails.this,"Updated",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(UpdateOrderDetails.this,MainActivity.class);
+                    startActivity(intent);
                 }else{
                     Toast.makeText(UpdateOrderDetails.this,"Error",Toast.LENGTH_SHORT).show();
 
@@ -56,12 +59,16 @@ public class UpdateOrderDetails extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setTitle("Update Order  ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.example_menu, menu);
+        inflater.inflate(R.menu.example_menu2, menu);
         return true;
     }
 
@@ -70,6 +77,8 @@ public class UpdateOrderDetails extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.Logout:
                 Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UpdateOrderDetails.this,UserLoginActivity.class);
+                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);

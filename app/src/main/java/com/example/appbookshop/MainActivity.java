@@ -48,12 +48,18 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
 
+
+
+
         DBHelper3 dbHelper= new DBHelper3(this);
 
         String cname=getIntent().getStringExtra("cname");
 
 
         ArrayList<MainModel> list = dbHelper.getData(cname);
+
+        getSupportActionBar().setTitle(cname);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         MainAdapter adapter = new MainAdapter(list,this);
@@ -79,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.Logout:
                 Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this,UserLoginActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.orders:

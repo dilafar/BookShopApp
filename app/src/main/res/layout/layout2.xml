@@ -6,7 +6,7 @@
     android:padding="10dp">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/image2"
+        android:id="@+id/image22"
         android:layout_width="103dp"
         android:layout_height="110dp"
         android:src="@mipmap/ic_launcher_round" />
@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_toRightOf="@id/image2"
+        android:layout_toRightOf="@id/image22"
         android:text="Product Name"
         android:textColor="#000"
         android:textSize="17sp" />
@@ -28,7 +28,7 @@
         android:layout_below="@+id/categoryname20"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/image2"
+        android:layout_toRightOf="@id/image22"
         android:text="Description"
         android:textColor="#000"
         android:textSize="17sp" />
@@ -40,7 +40,7 @@
         android:layout_below="@+id/image_name2"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/image2"
+        android:layout_toRightOf="@id/image22"
         android:text="Av.Qty"
         android:textColor="#000"
         android:textSize="17sp" />
@@ -61,9 +61,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/image_name3"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
         android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/image2"
+        android:layout_toRightOf="@id/image22"
         android:text="Price"
         android:textColor="#000"
         android:textSize="17sp" />
@@ -77,6 +78,28 @@
         android:layout_toRightOf="@id/image_name5"
         android:text="15"
         android:textColor="#000"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/textView29"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="250dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="85dp"
+        android:text="%"
+        android:textColor="#000000"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="85dp"
+        android:text="Rs"
+        android:textColor="#000000"
         android:textSize="17sp" />
 
 

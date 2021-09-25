@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     android:orientation="vertical"
     tools:context=".OrdersActivity">
+
     <include
         android:id="@+id/toolbar1"
         layout="@layout/toolbar"
@@ -15,7 +17,8 @@
         android:id="@+id/orderrecycleview"
         android:layout_width="match_parent"
         android:layout_height="546dp"
-        android:paddingTop="20dp" >
+        android:layout_marginTop="20dp"
+        android:paddingTop="20dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 
@@ -47,7 +50,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="200dp"
         android:layout_marginLeft="200dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/btn"
         android:text="Order"
         android:textColor="#050505"
         android:textSize="20sp"

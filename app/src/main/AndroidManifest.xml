@@ -17,7 +17,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppBookshop">
-        
+        <activity
+            android:name=".HomePageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CategoryView2"
+            android:exported="true" />
+        <activity
+            android:name=".UpdateDeliveryStatus"
+            android:exported="true" />
+        <activity
+            android:name=".ViewPaymentHistoryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="true"
+            android:parentActivityName=".DeliveryActivity"/>
+        <activity
+            android:name=".DeliveryStatusView"
+            android:exported="true" />
+        <activity
+            android:name=".DeliveryActivity"
+            android:exported="true"
+            android:parentActivityName=".OrdersActivity"/>
         <activity
             android:name=".UpdateAccountActivity"
             android:exported="true" />
@@ -59,16 +81,20 @@
             android:exported="true" />
         <activity
             android:name=".AddProducts2"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".CategoryView"/>
         <activity
             android:name=".UpdateOrderDetails"
-            android:exported="true" />
+            android:exported="true"
+            />
         <activity
             android:name=".OrderDetailsActivity"
-            android:exported="true" />
+            android:exported="true"
+            />
         <activity
             android:name=".OrdersActivity"
-            android:exported="true">
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -77,7 +103,8 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:parentActivityName=".CategoryView2"/>
     </application>
 
 </manifest>

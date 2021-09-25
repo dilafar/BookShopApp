@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 import com.example.appbookshop.Model.DeliveryModel;
+import com.example.appbookshop.Model.MainModel;
 import com.example.appbookshop.Model.PaymentModel;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class DBHelper8  extends SQLiteOpenHelper {
 
     final static String DBNAME = "payment2.db";
     final static int DBVERSION = 2;
+    public static final String TABLE_NAME = "payment";
 
     public DBHelper8(@Nullable Context context) {
         super(context, DBNAME, null, DBVERSION);
@@ -87,6 +89,66 @@ public class DBHelper8  extends SQLiteOpenHelper {
         cursor.close();
         database.close();
         return models;
+    }
+
+    public ArrayList<PaymentModel> getpaymenthistorybyname(){
+        ArrayList<PaymentModel> models = new ArrayList<>();
+        SQLiteDatabase database = this.getWritableDatabase();
+        Cursor cursor = database.rawQuery("Select * from payment",null);
+        if(cursor.moveToNext()){
+            while(cursor.moveToNext()){
+                PaymentModel model = new PaymentModel();
+                model.setPaymentID(cursor.getInt(0)+"");
+                model.setCardname(cursor.getString(1));
+                model.setCardnumber(cursor.getString(2));
+                model.setExpirydate(cursor.getString(3));
+                model.setCcv(cursor.getString(4));
+                model.setUname(cursor.getString(5));
+                model.setTotalpay(cursor.getString(6));
+                model.setPaymentdate(cursor.getString(7));
+                models.add(model);
+
+
+
+
+
+            }
+        }
+        cursor.close();
+        database.close();
+        return models;
+    }
+
+
+    ArrayList<PaymentModel> getData(String cname){
+        ArrayList<PaymentModel> models = new ArrayList<>();
+        SQLiteDatabase db = getReadableDatabase();
+        String sql="select * from " + TABLE_NAME + " where uname =?";
+        String[] select={cname};
+        Cursor cursor=db.rawQuery(sql,select);
+        if(cursor.moveToFirst()){
+            while (cursor.moveToNext()){
+                PaymentModel model = new PaymentModel();
+                model.setPaymentID(cursor.getInt(0)+"");
+                model.setCardname(cursor.getString(1));
+                model.setCardnumber(cursor.getString(2));
+                model.setExpirydate(cursor.getString(3));
+                model.setCcv(cursor.getString(4));
+                model.setUname(cursor.getString(5));
+                model.setTotalpay(cursor.getString(6));
+                model.setPaymentdate(cursor.getString(7));
+                models.add(model);
+
+            }
+        }
+        cursor.close();
+        db.close();
+        return models;
+    }
+
+    public int deleteItem(String name){
+        SQLiteDatabase database=this.getWritableDatabase();
+        return database.delete("payment","uname="+name,null);
     }
 
 }

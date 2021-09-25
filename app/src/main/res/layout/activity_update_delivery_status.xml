@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".UpdateDeliveryStatus">
 
     <include
@@ -17,7 +18,7 @@
         android:layout_height="26dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="190dp"
         android:text="DeliveryID"
         android:textColor="#000000"
         android:textSize="20sp"
@@ -31,7 +32,7 @@
         android:layout_height="26dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="190dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="D001"
@@ -85,19 +86,30 @@
 
     <Button
         android:id="@+id/update990"
-        android:layout_width="134dp"
-        android:layout_height="52dp"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:background="@color/btn"
         android:text="Update"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.873"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radiog990" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="267dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar1"
+        app:srcCompat="@drawable/del" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,12 +49,16 @@ public class CategoryActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
 
+        getSupportActionBar().setTitle("Add Category  ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.example_menu, menu);
+        inflater.inflate(R.menu.example_menu2, menu);
         return true;
     }
 
@@ -63,6 +67,8 @@ public class CategoryActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.Logout:
                 Toast.makeText(this,"Logout",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CategoryActivity.this,UserLoginActivity.class);
+                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);

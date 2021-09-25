@@ -100,7 +100,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
                ;
 
-                total = total + ((cursor.getInt(3) * cursor.getInt(4)) + ((cursor.getInt(3) * cursor.getInt(4))*( (cursor.getInt(5))/100)));
+                total = total + ((cursor.getInt(3) * cursor.getInt(4)) - ((cursor.getInt(3) * cursor.getInt(4))*( (cursor.getInt(5))/100)));
 
 
 
