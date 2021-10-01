@@ -17,7 +17,6 @@ public class ContactActivity extends AppCompatActivity {
     Button btnAddData;
     Button btnviewAll;
     Button btnDelete;
-
     Button btnviewUpdate;
 
     @Override
